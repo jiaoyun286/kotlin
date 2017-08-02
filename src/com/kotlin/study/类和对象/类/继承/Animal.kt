@@ -1,4 +1,4 @@
-package com.kotlin.study.继承
+package com.kotlin.study.类和对象.类.继承
 
 /**
  * 继承
