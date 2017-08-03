@@ -12,6 +12,8 @@ package com.kotlin.study.控制流
  * 和if语句一样，when语句作为表达式使用时else条件分支也是不能省的，除非编译器可以判定你已经把所有可能性已经包含在判断条件内
  *
  */
+
+val num = 100_100_100
 fun when作为表达式(x: Int) = when(x){
     1 -> 1
     2 -> 2
@@ -20,7 +22,7 @@ fun when作为表达式(x: Int) = when(x){
     }
 }
 
-// when表达式 中可以使用 in、 !in 、is 、!is  关键字
+// when表达式 中可以使用 in、 !in 、is 、!is  关键字对分支条件进行判断
 fun f(x: Any) = when (x){
     in 1..10 -> println("x is in the range")
     in validNumbers -> println("x is valid")
