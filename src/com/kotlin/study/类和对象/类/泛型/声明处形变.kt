@@ -12,10 +12,19 @@ class Device : Base()
 
 //声明处形变，T只会被生产，而不会被消费，即只会作为方法的返回值，不会作为入参。
 //此时，我们可以称类Source在参数T上是协变的，或者说T是协变的类型参数。也可以认为Source是T的生产者
-class Source<out T>
+class Source<out T>{
+    var name = "历史"
+}
 
 fun main(args: Array<String>) {
     var source: Source<Base> = Source<Device>()
+    var result = with(source){
+        if(this.name.isEmpty()){
+            return@with "返回结果"
+        }
+        this.name
+    }
+    println(result)
 }
 
 /**

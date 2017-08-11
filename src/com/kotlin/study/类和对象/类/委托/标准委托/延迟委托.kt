@@ -9,7 +9,7 @@ package com.kotlin.study.类和对象.类.委托.标准委托
  * 第一次被访问时，get()会执行传递给lazy()函数的lambda表达式并将表达式的结果赋值给属性，然后返回
  * 第二次被访问时，只会返回属性的值
  *
- *
+ *由于Lazy没有setVlaue函数，所有不能用于var属性
  */
 val lazyValue: String by lazy({
     println("computer")
