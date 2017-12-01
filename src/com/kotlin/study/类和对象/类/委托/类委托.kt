@@ -12,9 +12,11 @@ interface Base{
     fun print()
 }
 
-class BaseImpl : Base{
+// 主构造函数的参数前面是否带var 有什么区别?
+//不带只是参数，带了就是属性
+class BaseImpl constructor(var promp :String = "被代理类方法") : Base{
     override fun print() {
-        println("被代理类方法")
+        println(promp)
     }
 
 }
@@ -40,7 +42,8 @@ class DerivedB(b: Base) : Base by b{
 }
 
 fun main(args: Array<String>) {
-    val b = BaseImpl()
+    var b = BaseImpl()
+    println("主构造函数中声明的属性：" + b.promp)
     DerivedA(b).print()
-    DerivedB(b).print()
+    DerivedB(BaseImpl("自定义代理")).print()
 }

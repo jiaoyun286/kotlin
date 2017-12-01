@@ -20,7 +20,7 @@ val x: Int = n.toInt()
 val y = n+1
 
 /**
- * 字符类型用Char表示。它不能直接当作数字,需要显式转换未数字
+ * 字符类型用Char表示。它不能直接当作数字,需要显式转换为数字
  */
 fun check(c: Char){
     if(c.toInt() == 1){

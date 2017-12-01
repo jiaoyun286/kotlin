@@ -34,7 +34,7 @@ fun f(x: Any) = when (x){
 }
 
 /**
- * when表达式也可以作为初始化器给变量赋值，带参数时只能用在函数内部给变量赋值
+ * when表达式也可以作为初始化器给变量赋值
  */
 var max = when{
     a is Int -> a

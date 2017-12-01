@@ -17,7 +17,8 @@ class User{
      * 作为它第二个参数的lambda表达式在赋值前会被执行，返回一个布尔值，并根据这个返回结果决定是否执行赋值
      */
     val firstName: String by Delegates.vetoable("张"){
-        property, oldValue, newValue ->  println("$oldValue -> $newValue")
+        property, oldValue, newValue ->
+        println("$oldValue -> $newValue")
         if(oldValue.equals(newValue)) false else true
     }
 }
