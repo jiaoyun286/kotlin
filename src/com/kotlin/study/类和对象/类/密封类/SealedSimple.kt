@@ -2,8 +2,18 @@ package com.kotlin.study.类和对象.类.密封类
 
 /**
  * 密封类
- * 子类的类型是有限的集合，即是密封类子类数量是确定的。类似枚举类的实例数量是确定的一个道理
- * 在when语句中，可以避免写else分支，可以确定是否覆盖了所有分支条件
+ * 特点：
+ * 1.用来表示对类阶层的限制。可以限定一个值只允许是某些指定的类型。
+ * 2.其所有直接子类声明必须定义在密封类声明所在的文件内。
+ * 3.密封类是抽象类，不允许创建实例；
+ * 4.间接子类（孙子类）的声明可以放在任何地方；
+ * 5.只允许有私有的构造器；
+ *
+ * 作用：
+ * 当给when表达式传递一个密封类类型的变量时，可以验证分支语句是否覆盖了所有情况，这样就不必通过else语句来处理例外情况了
+ *
+ *
+ *
  *
  */
 
@@ -12,6 +22,8 @@ sealed class SealedSimple {
     class Simple2 : SealedSimple()
     class Simple3 : SealedSimple()
 }
+
+class Simple4 : SealedSimple()
 
 fun main(args:Array<String>){
     var simple = SealedSimple.Simple3()
@@ -30,6 +42,8 @@ fun f(simple: SealedSimple) = {
             println("SealedSimple.Simple2")
         is SealedSimple.Simple3 ->
             println("SealedSimple.Simple3")
+        is Simple4 ->
+                println("simple4")
 
     }
 
@@ -42,6 +56,8 @@ fun f(simple: SealedSimple) = {
             "SealedSimple.Simple2"
         is SealedSimple.Simple3 ->
             "SealedSimple.Simple3"
+        is Simple4 ->
+                "Simple4"
 
     }
 
