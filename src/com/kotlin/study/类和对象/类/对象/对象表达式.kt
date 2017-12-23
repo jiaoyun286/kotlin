@@ -44,7 +44,7 @@ fun foo(){
 class C{
     private fun foo() = object {
         fun 私有方法返回的匿名对象方法(){
-            println(this.javaClass.simpleName)
+            println("类名：" + this.javaClass.simpleName)
         }
     }
 
@@ -69,8 +69,9 @@ class C{
 
 fun main(args: Array<String>) {
     val c = C()
-    println(c.publicFoo().javaClass)
-    c.调用私有方法()
+//    println(c.publicFoo().javaClass)
+    println(c.调用私有方法())
+//    c.调用私有方法()
 }
 
 /**

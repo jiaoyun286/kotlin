@@ -15,6 +15,7 @@ class MyClass{
 fun main(args: Array<String>) {
     MyClass.create()
     MyClass.Companion.create()
+    OterClass.Companion.creat()
 }
 
 interface Factory<T>{
