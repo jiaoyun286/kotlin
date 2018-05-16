@@ -23,13 +23,14 @@ val ab: A = object : A(2),B{
 }
 
 /**
- * 任何时候，我们如果只需要一个对象，而不需要任何对象，我们可以在家在object后面的大括号内写实现
+ * 任何时候，我们如果只需要一个对象，而不需要任何对象的类型，我们可以在家在object后面的大括号内写实现
  *
  */
 fun foo(){
     val adHoc = object {
         val x = 0
         val y = 1
+        fun fun1() = 1
     }
 
     println(adHoc.x + adHoc.y)
